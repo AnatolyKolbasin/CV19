@@ -9,13 +9,30 @@
 	<Window.DataContext>
 		<vm:MainWindowViewModel/>
 	</Window.DataContext>
-	<Grid>
-		<TextBox HorizontalAlignment="Left" 
-				 Margin="18,18,0,0" 
-				 Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" 
-				 TextWrapping="Wrap" 
-				 VerticalAlignment="Top" 
-				 Width="250"/>
-
-	</Grid>
+	<DockPanel>
+		<Menu DockPanel.Dock="Top">
+			<MenuItem Header="File">
+				<MenuItem Header="Close"></MenuItem>
+			</MenuItem>
+			<MenuItem Header="Help">
+				<MenuItem Header="About programm"></MenuItem>
+			</MenuItem>
+		</Menu>
+		<StatusBar DockPanel.Dock="Bottom">
+			<StatusBarItem>
+				<TextBlock Text="1234" MinWidth="150" MaxWidth="300"/>
+			</StatusBarItem>
+			<StatusBarItem>
+				<ProgressBar Width="120" Height="10" Value="12"/>
+			</StatusBarItem>
+		</StatusBar>
+		<TabControl>
+			<TabItem Header="tab 1">
+				<Grid>
+					<Rectangle Fill="Blue" Stroke="Red" StrokeThickness="3" RadiusX="5" RadiusY="7"/>
+				</Grid>
+			</TabItem>
+			<TabItem Header="tab 2"></TabItem>
+		</TabControl>
+	</DockPanel>
 </Window>
