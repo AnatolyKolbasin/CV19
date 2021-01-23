@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace CV19.Infrastructure.Commands.Base
 {
-    internal class Command : ICommand
+    internal abstract class Command : ICommand
     {
         public event EventHandler CanExecuteChanged
         {
