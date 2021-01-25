@@ -32,16 +32,29 @@
 			<MenuItem Header="Help">
 				<MenuItem Header="About programm"></MenuItem>
 			</MenuItem>
-		</Menu>
+            <MenuItem Command="{Binding ChangeTabIndexCommand}" CommandParameter="-1">
+                <MenuItem.Header>
+                    <fa:ImageAwesome Height="12" Icon="Regular_ArrowAltCircleLeft"/>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Command="{Binding ChangeTabIndexCommand}" CommandParameter="+1">
+                <MenuItem.Header>
+                    <fa:FontAwesome Height="12" Icon="Regular_ArrowAltCircleRight"/>
+                </MenuItem.Header>
+            </MenuItem>
+        </Menu>
 		<StatusBar DockPanel.Dock="Bottom">
 			<StatusBarItem>
 				<TextBlock Text="{Binding Status}" MinWidth="150" MaxWidth="300"/>
 			</StatusBarItem>
+            <StatusBarItem>
+                <TextBlock Text="{Binding SelectedTabIndex}"></TextBlock>
+            </StatusBarItem>
 			<StatusBarItem>
 				<ProgressBar Width="120" Height="10" Value="12"/>
 			</StatusBarItem>
 		</StatusBar>
-		<TabControl>
+        <TabControl SelectedIndex="{Binding SelectedTabIndex}">
 			<TabItem Height="22" Margin="-2,0,-2,0" VerticalAlignment="Bottom">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
